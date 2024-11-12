@@ -423,7 +423,7 @@ func handleISUPPORT(c *Client, e Event) {
 	if tmp, ok = c.GetServerOptionInt("LINELEN"); ok {
 		maxLineLength = tmp
 		c.state.Lock()
-		c.state.maxLineLength = maxTagLength - 2 // -2 for CR-LF.
+		c.state.maxLineLength = maxLineLength - 2 // -2 for CR-LF.
 		c.state.Unlock()
 	}
 
